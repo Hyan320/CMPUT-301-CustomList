@@ -29,7 +29,20 @@ public class CustomListTest {
 
     @Test
     public void hasCityTest(){
-        assertNotNull(list);
+        City c = new City("Edmonton", "AB");
+        list.addCity(c);
+        assertEquals(1, list.hasCity(c));
     }
-    
+
+    @Test
+    public void deleteCityTest(){
+        City c = new City("Toronto", "Ontario");
+        list.addCity(c);
+        list.deleteCity(c);
+        assertEquals(0, list.hasCity(c));
+
+    }
+
+
+
 }
